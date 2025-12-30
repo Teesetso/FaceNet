@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Ad — FaceNet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Submit Your Ad</h1>
+</header>
+
+<main>
+  <div class="create-content">
+
+    <label for="adTitle">Ad Title</label>
+    <input type="text" id="adTitle" placeholder="Enter ad title">
+
+    <label for="adDesc">Description</label>
+    <textarea id="adDesc" placeholder="Describe your item"></textarea>
+
+    <label for="adPhone">Cellphone Number</label>
+    <input type="text" id="adPhone" placeholder="e.g. 0781234567">
+
+    <label for="adImages">Upload Images (1–6)</label>
+    <input type="file" id="adImages" multiple accept="image/*">
+
+    <button onclick="submitAd()">Submit Ad</button>
+
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
+
