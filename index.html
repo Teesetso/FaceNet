@@ -1,48 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>FaceNet</title>
-  <link rel="stylesheet" href="style.css" />
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceNet | Buy & Sell</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-<header>
-  <h1>FaceNet</h1>
-  <input type="text" id="search" placeholder="Search ads..." />
-  <button onclick="openForm()">Post an Ads</button>
-</header>
-
-<main id="ads"></main>
-
-<!-- Post Ad Modal -->
-<!-- Post Ad / Signup Modal -->
-<div id="create">
-  <div class="create-content">
-    <h2>Create Account</h2>
-
-    <label for="Name">Full Name</label>
-    <input type="text" id="Name" placeholder="Enter your full name" />
-
-    <label for="Address">Email Address</label>
-    <input type="text" id="Address" placeholder="Enter your email" />
-
-    <label for="Password">Password</label>
-    <input type="password" id="Password" placeholder="Enter password" />
-
-    <label for="ConfirmPassword">Confirm Password</label>
-    <input type="password" id="ConfirmPassword" placeholder="Confirm password" />
-
-    <button onclick="signUp()">Sign Up</button>
-
-    <p>Already have an account? 
-      <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
-    </p>
-  </div>
+<div id="preloader">
+    <div class="loader-content">
+        <div class="spinner"></div>
+        <span class="loader-text">FaceNet</span>
+    </div>
 </div>
+<header class="navbar">
+    <div class="logo">
+        <span class="logo-main">FACENET</span>
+        <span class="logo-sub">FaceNet | Buy & Sell</span>
+    </div>
 
+    <nav>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#">📱Electronics</a></li>
+             <li><a href="#">🚗Vehicles</a></li>
+            <li><a href="#">🏠Property</a></li>
+            <li><a href="#">👗Fashion</a></li>
+            <li><a href="#">⚽Sports & Outdoor</a></li>
+            <li><a href="#">🛋Home & Furniture</a></li>
+            <li><a href="#">🛠️Services</a></li>
+            <li><a href="signup.html" class="btn-post-ad">➕Post Ad</a></li>
+        </ul>
+    </nav>
 
-    <script src="script.js"></script>
+    <div class="header-icons">
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+        <a href="javascript:void(0)" id="searchToggle">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+    </div>
+    <a href="#"><i class="fa-regular fa-user"></i></a>
+    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+</div>
+    <div class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+</header>
+<section class="hero-section">
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <span class="hero-subtitle">Premium Collections 2026</span>
+            <h1 class="hero-title">Experience Quality <br><span>Beyond Expectations</span></h1>
+            <p class="hero-description">
+                Explore a curated marketplace of world-class electronics, 
+                high-end fashion, and essential home decor tailored for your lifestyle.
+            </p>
+            <div class="hero-btns">
+                <a href="#" class="btn-primary">Shop Collection</a>
+                <a href="#" class="btn-secondary">View Bestsellers</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="categories-section">
+    <div class="section-header">
+        <span class="sub-title">Explore our marketplace</span>
+        <h2 class="main-title">Shop by Category</h2>
+        <div class="title-line"></div>
+    </div>
+<div class="category-grid">
+    <a href="electronics.html" class="category-card">
+        <div class="cat-icon-wrap">📱</div>
+        <h3>Electronics</h3>
+        <span class="explore-link">Browse All →</span>
+    </a>
+
+    <a href="vehicles.html" class="category-card">
+        <div class="cat-icon-wrap">🚗</div>
+        <h3>Vehicles</h3>
+        <span class="explore-link">Browse All →</span>
+    </a>
+    
+        <a href="#" class="category-card">
+            <div class="cat-icon-wrap">🏠</div>
+            <h3>Property</h3>
+            <p>0 Listings</p>
+            <span class="explore-link">Browse All →</span>
+        </a>
+
+        <a href="#" class="category-card">
+            <div class="cat-icon-wrap">👗</div>
+            <h3>Fashion</h3>
+            <p>0 Items</p>
+            <span class="explore-link">Browse All →</span>
+        </a>
+
+        <a href="#" class="category-card">
+            <div class="cat-icon-wrap">⚽</div>
+            <h3>Sports & Outdoor</h3>
+            <p>0 Items</p>
+            <span class="explore-link">Browse All →</span>
+        </a>
+
+        <a href="#" class="category-card">
+            <div class="cat-icon-wrap">🛋</div>
+            <h3>Home & Furniture</h3>
+            <p>0 Items</p>
+            <span class="explore-link">Browse All →</span>
+        </a>
+
+        <a href="#" class="category-card">
+            <div class="cat-icon-wrap">🛠️</div>
+            <h3>Services</h3>
+            <p>Consult Pros</p>
+            <span class="explore-link">Browse All →</span>
+        </a>
+    </div>
+</section>
+<section class="bestsellers-section">
+    <div class="section-header">
+        <span class="sub-title" id="filterSubtitle">Currently viewing</span>
+        <h2 class="main-title" id="filterTitle">All Products</h2>
+        <div class="title-line"></div>
+    </div>
+
+    <div class="product-grid" id="mainProductGrid">
+        </div>
+</section>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-image">
+                <span class="badge sale">Sale</span>
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=500" alt="Product Name">
+                <div class="product-overlay">
+                    <button class="action-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+                    <button class="action-btn"><i class="fa-regular fa-heart"></i></button>
+                    <button class="action-btn"><i class="fa-solid fa-eye"></i></button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-cat">Electronics</p>
+                <h3 class="product-name">Minimalist Smart Watch</h3>
+                <div class="product-price">
+                    <span class="current-price">R120.00</span>
+                    <span class="old-price">R150.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=500" alt="Product Name">
+                <div class="product-overlay">
+                    <button class="action-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+                    <button class="action-btn"><i class="fa-regular fa-heart"></i></button>
+                    <button class="action-btn"><i class="fa-solid fa-eye"></i></button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-cat">Sports & Outdoor</p>
+                <h3 class="product-name">Pro Athletics Sneakers</h3>
+                <div class="product-price">
+                    <span class="current-price">R85.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <span class="badge hot">Hot</span>
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=500" alt="Product Name">
+                <div class="product-overlay">
+                    <button class="action-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+                    <button class="action-btn"><i class="fa-regular fa-heart"></i></button>
+                    <button class="action-btn"><i class="fa-solid fa-eye"></i></button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-cat">Electronics</p>
+                <h3 class="product-name">Noise Cancelling Headphones</h3>
+                <div class="product-price">
+                    <span class="current-price">R299.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=500" alt="Product Name">
+                <div class="product-overlay">
+                    <button class="action-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+                    <button class="action-btn"><i class="fa-regular fa-heart"></i></button>
+                    <button class="action-btn"><i class="fa-solid fa-eye"></i></button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-cat">Home & Furniture</p>
+                <h3 class="product-name">Modern Desk Lamp</h3>
+                <div class="product-price">
+                    <span class="current-price">R45.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <div class="logo">
+                <span class="logo-main" style="color: #fff;">FACENET</span>
+                <span class="logo-sub" style="color: #b58d3d;">BUY & SELL</span>
+            </div>
+            <p class="footer-desc">Your ultimate destination for premium fashion, electronics, and home essentials. Discover quality products you'll love.</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to get special offers and once-in-a-lifetime deals.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 FaceNet | Buy & Sell. All Rights Reserved.</p>
+        <div class="payment-icons">
+            <i class="fa-brands fa-cc-visa"></i>
+            <i class="fa-brands fa-cc-mastercard"></i>
+            <i class="fa-brands fa-cc-paypal"></i>
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
+<a href="https://wa.me/0634879062" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="tooltip-text">Chat with us!</span>
+</a>
+
 </body>
 </html>
