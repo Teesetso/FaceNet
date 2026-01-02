@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics | FaceNet</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <span class="logo-main">FACENET</span>
+        <span class="logo-sub">Electronics</span>
+    </div>
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="signup.html" class="btn-post-ad">➕Post Ad</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="bestsellers-section">
+    <div class="section-header">
+        <span class="sub-title">Premium Gadgets</span>
+        <h2 class="main-title">Electronics Shop</h2>
+        <div class="title-line"></div>
+        
+        <div class="filter-controls" style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <input type="text" id="searchInput" placeholder="Search in Electronics..." class="search-input" style="width: 250px; opacity: 1;">
+            <select id="sortPrice" class="sort-dropdown">
+                <option value="default">Sort by Price</option>
+                <option value="low">Low to High</option>
+                <option value="high">High to Low</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="product-grid" id="categoryGrid">
+        
+        <div class="product-card">
+            <div class="product-image">
+                <span class="badge sale">New</span>
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=500" alt="Smart Watch">
+                <div class="product-overlay">
+                    <button class="action-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+                    <button class="action-btn"><i class="fa-solid fa-eye"></i></button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-cat">Electronics</p>
+                <h3 class="product-name">Minimalist Smart Watch</h3>
+                <div class="product-price">
+                    <span class="current-price">R120.00</span>
+                </div>
+            </div>
+        </div>
+
+        </div>
+</section>
+
+<footer class="main-footer">
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

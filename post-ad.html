@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Your Ad | FaceNet</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+   <div class="form-wrapper">
+    <form class="auth-form" id="adForm">
+        <button type="button" id="logoutBtn" class="btn-secondary">Log Out</button>
+        <h2>Post Your Item</h2>
+        <p style="font-size: 0.85rem; color: #666;">Fill this out, then send the photo on WhatsApp.</p>
+        
+        <label for="itemCategory">Select Category:</label>
+        <select id="itemCategory" required>
+            <option value="" disabled selected>Choose a category...</option>
+            <option value="Electronics">📱 Electronics</option>
+            <option value="Vehicles">🚗 Vehicles</option>
+            <option value="Property">🏠 Property</option>
+            <option value="Fashion">👗 Fashion</option>
+            <option value="Sports & Outdoor">⚽ Sports & Outdoor</option>
+            <option value="Home & Furniture">🛋 Home & Furniture</option>
+            <option value="Services">🛠️ Services</option>
+        </select>
+
+        <input type="text" id="itemName" placeholder="What are you selling?" required>
+        <input type="text" id="itemPrice" placeholder="Price (e.g. R500)" required>
+        <textarea id="itemDesc" placeholder="Brief description of the item..." required></textarea>
+        
+        <button type="submit" id="submitBtn" class="btn-primary">Send to Programmer via WhatsApp</button>
+    </form>
+</div>
+    <div class="user-controls">
+    <button id="logoutBtn" class="btn-secondary" style="margin-bottom: 20px;">Log Out</button>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
